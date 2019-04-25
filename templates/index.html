@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdn.bootcss.com/socket.io/1.5.1/socket.io.min.js"></script>
+    <script type="text/javascript" src="/static/js/index.js"></script>
+
+
+</head>
+<body>
+
+
+<div class="container">
+    <ul id="myTab" class="nav nav-tabs">
+        <li><a href="#single_thread" data-toggle="tab">单线程模拟</a></li>
+        <li><a href="#multithreading" data-toggle="tab">多线程共享数据</a></li>
+        <li><a href="#supply_consumer" data-toggle="tab">生产者消费者</a></li>
+        <li><a href="#preemptive" data-toggle="tab">抢占式任务调度</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane active" id="single_thread">
+            <div class="single_thread">
+                <div class="cycle_section">
+                    <span class="label label-default">循环次数</span>
+                    <select name="cycle-section" class="input-small form-control">
+                        <option></option>
+                        <option>10</option>
+                        <option>20</option>
+                        <option>50</option>
+                        <option>100</option>
+                    </select>
+                </div>
+                <div class="progress progress-striped active">
+                    <div class="progress-bar progress-bar-success" role="progressbar"
+                         aria-valuemin="0" aria-valuemax="100"
+                         style="width: 0%;">
+                    </div>
+                </div>
+                <span class="percent">00% 完成</span>
+                <span class="time">未准备</span>
+                <button type="button" class="btn btn-primary">开始</button>
+            </div>
+        </div>
+        <div class="tab-pane" id="multithreading">
+
+            <div class="multi_threading">
+                <div class="cycle_section">
+                    <span class="label label-default">线程个数</span>
+                    <select name="thread-section" class="input-small form-control">
+                        <option></option>
+                        <option>5</option>
+                        <option>10</option>
+                        <option>20</option>
+                    </select>
+                </div>
+
+
+                <div class="calculate_section">
+                    <span class="label label-default">计算次数</span>
+                    <select name="calculate-section" class="input-small form-control">
+                        <option></option>
+                        <option>100</option>
+                        <option>200</option>
+                        <option>500</option>
+                        <option>1000</option>
+                    </select>
+                </div>
+
+                <div class="multi_threading_progress">
+
+                </div>
+                <span class="time"></span>
+
+                <button type="button" class="btn btn-primary">开始</button>
+
+            </div>
+
+        </div>
+        <div class="tab-pane" id="preemptive">
+            <div class="supply_consumer">
+                <div class="supply_section">
+                    <span class="label label-default">生产速度</span>
+                    <select name="supply_section" class="input-small form-control">
+                        <option>0</option>
+                        <option>5</option>
+                        <option>10</option>
+                        <option>20</option>
+                    </select>
+                </div>
+                <div class="consumer_section">
+                    <span class="label label-default">消费速度</span>
+                    <select name="consumer_section" class="input-small form-control">
+                        <option>0</option>
+                        <option>5</option>
+                        <option>10</option>
+                        <option>20</option>
+                    </select>
+                </div>
+
+                <div class="progress progress-striped active">
+                    <div class="progress-bar progress-bar-success" role="progressbar"
+                         aria-valuemin="0" aria-valuemax="100"
+                         style="width: 0%;">
+                    </div>
+                </div>
+                <span class="source_num">0个</span>
+
+                <button type="button" class="btn btn-primary">开始</button>
+                {#                <button type="button" class="btn btn-primary">消费资源</button>#}
+
+            </div>
+
+        </div>
+        <div class="tab-pane" id="supply_consumer">
+            <div class="supply_consumer">
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>
