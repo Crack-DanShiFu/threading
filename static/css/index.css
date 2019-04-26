@@ -2,23 +2,73 @@
     width: 1140px;
     margin: auto;
 }
+.container .top-bar{
+    height: 50px;
+    margin-bottom: 5px;
+    background-color: #74c374;
+}
+
+.container .top-bar span{
+    color: white;
+    font-size: 25px;
+    line-height: 50px;
+    margin-left: 10px;
+}
 
 .cycle_section {
     width: 200px;
     margin-bottom: 20px;
 }
-.single_thread{
+
+.single_thread {
     margin-top: 100px;
 }
+
 .single_thread button {
     float: right;
 }
+
 .multi_threading button {
     float: right;
 }
-.multi_threading .multi_threading_progress{
+
+.multi_threading .calculate_section {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.multi_threading .nom_of_multi_threading {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+
+.multi_threading .multi_threading_progress {
     margin-top: 60px;
 }
-.multi_threading{
+
+.multi_threading {
     margin-top: 100px;
+}
+
+.supply_consumer {
+    margin-top: 100px;
+}
+
+.supply_consumer .supply_section {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.supply_consumer .consumer_section {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.preemptive {
+    margin-top: 100px;
+}
+
+.preemptive .option_btn {
+    float: right;
 }

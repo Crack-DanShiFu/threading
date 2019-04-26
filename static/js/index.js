@@ -200,6 +200,70 @@ $(document).ready(function () {
         );
     })
 
+    $('.preemptive .btn-primary:eq(0)').click(function () {
+        $('.preemptive .btn-primary:eq(0)').attr('disabled', true);
+        $('.preemptive .state:eq(0)').text('运行中')
+
+        namespace = '/preemptive1';
+        var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
+        socket.on('count1',
+            function (res) {
+                $('.preemptive .progress-bar:eq(0)').css('width', res['count1'] + '%')
+                $('.preemptive .percent:eq(0)').text(res['count1'] + '% 完成')
+            }
+        );
+        socket.on('count1_run_time',
+            function (res) {
+                $('.preemptive .state:eq(0)').text(res['time'] + 's ')
+                $('.preemptive .btn-primary:eq(0)').attr('disabled', false);
+            }
+        );
+    })
+
+    $('.preemptive .btn-primary:eq(1)').click(function () {
+        $('.preemptive .btn-primary:eq(1)').attr('disabled', true);
+        $('.preemptive .state:eq(1)').text('运行中')
+
+        namespace = '/preemptive2';
+        var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
+        socket.on('count2',
+            function (res) {
+                $('.preemptive .progress-bar:eq(1)').css('width', res['count2'] + '%')
+                $('.preemptive .percent:eq(1)').text(res['count2'] + '% 完成')
+
+            }
+        );
+        socket.on('count2_run_time',
+            function (res) {
+                $('.preemptive .state:eq(1)').text(res['time'] + 's ')
+                $('.preemptive .btn-primary:eq(1)').attr('disabled', false);
+
+            }
+        );
+    })
+
+    $('.preemptive .btn-primary:eq(2)').click(function () {
+        $('.preemptive .btn-primary:eq(2)').attr('disabled', true);
+        $('.preemptive .state:eq(2)').text('运行中')
+
+        namespace = '/preemptive3';
+        var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
+        socket.on('count3',
+            function (res) {
+                $('.preemptive .progress-bar:eq(2)').css('width', res['count3'] + '%')
+                $('.preemptive .percent:eq(2)').text(res['count3'] + '% 完成')
+
+            }
+        );
+        socket.on('count3_run_time',
+            function (res) {
+                $('.preemptive .state:eq(2)').text(res['time'] + 's ')
+                $('.preemptive .btn-primary:eq(2)').attr('disabled', false);
+
+            }
+        );
+    })
+
 })
 
 
